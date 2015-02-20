@@ -1,11 +1,3 @@
-Tidy data set for activity sensors
-===================================
-
-Step 1 - download the "run_analysis.R" file  
-Step 2 - set your working directory to where the file is  
-Step 3 - run the file   
-Step 4 - read in the file produced from the code using read.table("activitydata.txt")  
-
 ### Study design
 The data was taken from a study conducted by Jorge L. et al. called "Human Activity Recognition Using Smartphones Dataset". There is a paper description at http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones and all the data is in a zip file at https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
@@ -43,3 +35,24 @@ The numeric labels for activities were converted to descriptive ones using the m
 Then an independent tidy data frame was created using the aggretate function with the average of each variable for each activity and each subject. As a result of aggregating, new columns were made making some of the old ones unneccessary. The old ones were deleted and the new ones were renamed.
 
 The tidy data frame was written to a file called "activitydata.txt" in the working directory.
+
+### Data Dictionary
+
+The identifiers are as follows:
+
+- participant - the participant number (1-30) 
+- activity - the activity description
+
+The vector information contains 81 rows that are compromised of many elements for each measurement. For example "tBodyAcc-mean-X" denotes a measurement of the mean of a person's acceleration along the x axis as calculated using time. Below are the list of parameters that appear in the tidy data set:  
+
+- t prefix - measurement was calculated using the time domain  
+- f prefix- measurement was calculated using the frequency domain
+- Body - the person's own movement  
+- Gravity - movement due to gravity  
+- Acc - acceleration - m/s^2  
+- Jerk - jerk - m/s^3  
+- Gyro - angular velocity - radians/s  
+- Mag - magnitude using the Euclidean norm
+- std - standard deviation  
+- mean - average  
+- x, y, z - which axis the measurement corresponds to  
